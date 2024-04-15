@@ -1,0 +1,8 @@
+{% block content %}
+
+<form action="{% url 'filmes:filme_edit' pk %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Editar</button>
+</form>
+{% endblock %}

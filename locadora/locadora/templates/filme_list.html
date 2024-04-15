@@ -1,0 +1,31 @@
+{% block content %}
+
+    <table>
+        <thead>
+            <tr>
+                <h1>Seu Catalogo</h1>
+
+                <a href="{% url 'filmes:filme_new' %}">Adicionar</a>
+                <td>Filme</td>
+                <td>Genero</td>
+                <td>Quantidade</td>
+                <td>Preco</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for filme in filmes %}
+            <tr>
+                <td>{{ filme.filme }}||</td>
+                <td>{{ filme.genero }}||</td>
+                <td>{{ filme.quantidade }}||</td>
+                <td>{{ filme.preco }}</td>
+                <td><a href="{% url 'filmes:filme_del' filme.id %}">Apagar</a></td>
+                <td><a href="{% url 'filmes:filme_edit' filme.id %}">Editar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{% url 'index' %}">Voltar</a>
+{% endblock %}

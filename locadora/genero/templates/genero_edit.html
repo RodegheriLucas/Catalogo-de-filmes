@@ -1,0 +1,9 @@
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'filme/css/style.css' %}">
+<form action="{% url 'generos:genero_edit' pk %}" method="post"> 
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Editar</button>
+</form>
+{% endblock %}

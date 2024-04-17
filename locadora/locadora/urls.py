@@ -26,4 +26,5 @@ urlpatterns = [
     path('filmes/', include('filme.urls', namespace='filmes')),
     path('generos/', include('genero.urls', namespace='generos')),
     path('admin/', admin.site.urls),
+
 ]
